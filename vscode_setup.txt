@@ -1,0 +1,38 @@
+
+
+
+
+C:\Users\Gen_ai>conda activate base
+
+(base) C:\Users\Gen_ai>conda env list
+# conda environments:
+#
+base                  *  C:\Users\chand\anaconda3
+
+
+(base) C:\Users\Gen_ai>cd genai
+
+(base) C:\Users\Gen_ai\genai>
+
+(base) C:\Users\Gen_ai\genai>conda create -n env python=3.11               ---> this folder is created inside anaconda3 / envs / env(folder_name)
+
+(base) C:\Users\Gen_ai\genai>conda activate env
+
+(env) C:\Users\Gen_ai\genai>
+
+(env) C:\Users\Gen_ai\genai>conda env list
+# conda environments:
+#
+base                     C:\Users\chand\anaconda3
+env                   *  C:\Users\chand\anaconda3\envs\env
+
+Note :
+------
+
+After this click on (base python 3.11.2.7) on top right corner and select another  kernel / python enivironments / env ( ehich we created instead of using base we will use this env 
+
+
+(env) C:\Users\Gen_ai\genai>pip install -r requirements.txt
+
+(env) C:\Users\Gen_ai\genai>pip freeze > requirements.txt   --- inorder to create requirements.txt automatically along with versions (python==3.11 , numpy = 3.6 )
+
