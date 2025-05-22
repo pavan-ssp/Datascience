@@ -1,0 +1,166 @@
+https://sp-events.courses.nvidia.com/DLI-KrishNaik-India
+
+
+
+
+
+Git 
+----
+
+
+pwd -- shows current directory (bash)
+
+ls -- shows all directory    (bash)
+
+clear --- clear the terminal   (bash)
+
+
+ Clone - Cloning a repository on our local machine      ( git clone <-some link-> )
+ 
+ Status - displays the state of the code   ( git status )
+ 
+ cd (directoryname) - to change the directorypath to one folder
+ 
+ cd.. it will go ahead of one step of the previous directory
+ 
+ ls -- list of all files
+ 
+ ls -h/-a -- to get all hidden files
+ 
+ cls/clear -- to clear the terminal
+ 
+ 
+ git status -- it shows is there any additions or delections etc 
+ 
+ git status :
+ ------------
+ 
+untracked - new files that git doesn’t yet track  ( if we created a file and it is not added using git add)
+ 
+modified - changed
+
+staged- file is ready to be committed
+
+unmodified - unchanged
+
+
+Add & Commit :
+-------------
+
+add- adds new or changed file in your working directory to the Git staging area. 
+ 
+git add <-file name-> --- inorder to add individual file
+
+git add .   --- inorder to add multiple files which are newely added or modified or deleted 
+
+commit- it is the record of change  -------    git commit -m “some message”
+
+
+
+Push Command :
+---------------
+
+push- upload local repo content to remote repo ----- git push origin main
+
+
+
+
+Create a new folder :   [ Not inside the existing folder pure new folder ]
+-----------------------
+
+PS C:\Users\Gen_ai\genai> cd ..      ---> goto the one step before
+
+PS C:\Users\Gen_ai> mkdir genaicoding     ----> create a folder named genaicoding so after this folder created but not intialized so that .git and all not there
+
+PS C:\Users\Gen_ai> cd genaicoding
+PS C:\Users\Gen_ai\genaicoding> ls -h
+PS C:\Users\Gen_ai\genaicoding> git init
+Initialized empty Git repository in C:/Users/Gen_ai/genaicoding/.git/
+PS C:\Users\Gen_ai\genaicoding> ls -h
+
+Now create a repository in github dont check readme.md and copy the path in the newly created repo
+
+PS C:\Users\Gen_ai\genaicoding> git remote add  origin https://github.com/pavan-ssp/genaicoding.git
+
+PS C:\Users\Gen_ai\genaicoding> git remote -v  [ To check or verify the remote ]
+origin  https://github.com/pavan-ssp/genaicoding.git (fetch)
+origin  https://github.com/pavan-ssp/genaicoding.git (push)
+
+
+PS C:\Users\Gen_ai\genaicoding> git branch     [ it shows master as default ]
+PS C:\Users\Gen_ai\genaicoding> git branch -M main  [ changes master to main ]
+
+
+
+Branch :
+--------
+
+PS C:\Users\Gen_ai\genaicoding> git branch   [ check current branch ]
+* main
+
+PS C:\Users\Gen_ai\genaicoding> git checkout -b feature/coding1     [ create a new branch named feature/coding1 ]
+Switched to a new branch 'feature/coding1'
+
+PS C:\Users\Gen_ai\genaicoding> git push origin feature/coding1    [ push the created branch ]
+
+PS C:\Users\Gen_ai\genaicoding> git branch   [ check current branch ]
+* feature/coding1
+  main
+
+PS C:\Users\Gen_ai\genaicoding> git branch -d feature/coding2   [ delete branch but it was not able to delete due to we are present working on same branch need to switch and delete ]
+error: cannot delete branch 'feature/coding2' used by worktree at 'C:/Users/Gen_ai/genaicoding'
+
+PS C:\Users\Gen_ai\genaicoding> git checkout main
+Switched to branch 'main'
+
+PS C:\Users\Gen_ai\genaicoding> git branch -d feature/coding2
+Deleted branch feature/coding2 (was 2bc5d3d).
+
+
+
+Merging Code :
+-------------
+
+ Way 1 :
+ -------
+ 
+ git diff <-branch name->    (to compare commits, branches, files & more)
+ 
+ git merge <-branch name->    (to merge 2 branches)
+ 
+ Way 2 :
+ -------
+ 
+ Create a PR
+ 
+ 
+ Pull Command :
+ ----------------
+ 
+ git pull origin main
+ 
+ used to fetch and download content from a remote repo and
+ immediately update the local repo to match the content
+ 
+ 
+ Undoing Changes :
+ -----------------
+ 
+ Case 1 : staged changes
+               git reset <-file name->
+               git reset
+ Case 2: committed changes (for one commit)
+              git reset HEAD-1
+ Case 3: committed changes (for many commits)
+              git reset <-commit hash->
+              git reset --hard <-commit hash->
+			  
+			  
+Fork :
+------
+
+ A fork is a new repository that shares code and visibility settings
+ with the original “upstream” repository.
+ Fork is a rough copy			  
+
+
